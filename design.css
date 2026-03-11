@@ -1,0 +1,43 @@
+.cl1{
+    font-family: Arial;
+}
+h1{
+    font-family:serif;
+    color: brown;
+}
+h3{
+    font-family:serif;
+    color: rgb(54, 42, 165);
+}
+
+.resize_img {
+    width: 100%;
+    height: auto;
+}   
+
+.container{
+    display: flex;
+    flex: 1;
+}
+
+nav{
+    width: 15%; float: left
+}
+
+main{
+    width: 65%; float: left
+}
+aside{
+    width: 20%; float: left
+}
+
+footer{
+    float:left;
+    background-color: rgb(210, 255, 196);
+    width : 100%;
+}
+
+
+.centered-text {
+  text-align: center;
+}
