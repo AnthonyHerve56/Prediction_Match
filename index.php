@@ -7,6 +7,18 @@
     <title>Prédictions de match</title>
     <link rel="stylesheet" type="text/css" href="design.css">
 </head>
+<?php
+
+if (isset($_POST['ID']) && isset($_POST['mdp'])) {
+
+    $id = $_POST['ID'];
+    $mdp = $_POST['mdp'];
+
+    echo "ID saisi : " . $id . "<br>";
+    echo "Mot de passe saisi : " . $mdp . "<br>";
+
+}
+?>
 
 <body>
 
@@ -14,6 +26,8 @@
 
         <h1> Welcome les GOATs des predictions</h1>
 
+        <!-- <?php echo $_GET['page']; ?>
+        <?php echo $_GET['page2']; ?> -->
 
     </header>
     <div class="container">
@@ -29,23 +43,31 @@
             </ol>
             <?php
 
-                $Score = [
-                    "daly" => 10,
-                    "Antho" => 8,
-                    "Jerem" => 7,
-                    "Jorys" => 3,
-                ];
+            $Score = [
+                "daly" => 10,
+                "Antho" => 8,
+                "Jerem" => 7,
+                "Jorys" => 3,
+            ];
 
-                foreach($Score as $joueur => $points){
-                    echo "Le score de " . $joueur . " est : " . $points . "<br>";
-                }
+            foreach ($Score as $joueur => $points) {
+                echo "Le score de " . $joueur . " est : " . $points . "<br>";
+            }
 
             ?>
         </nav>
         <main>
-            <label for="Identifiant">ID : </label>
-            <input type="text" id="Identifiant" name="ID"> <br><br>
-            <label for="sel_match">Choisissez un match&nbsp;:</label>
+            <form method="POST" action="index.php">
+
+                <label for="Identifiant">ID : </label>
+                <input type="text" id="Identifiant" name="ID"> <br><br>
+
+                <label for="mdp">Mot de passe : </label>
+                <input type="password" id="mdp" name="mdp"> <br><br>
+
+                <input type="submit" value="Se connecter">
+
+            </form>
 
             <select name="matchs" id="sel_match">
                 <option value="">--Veuillez choisir un match--</option>
@@ -71,11 +93,12 @@
         </main>
 
         <aside>
-            <img class="resize_img" src="jer.png" alt="Jerem qui joue au foot"/>
+            <img class="resize_img" src="jer.png" alt="Jerem qui joue au foot" />
         </aside>
     </div>
     <footer>
-        <p class="centered-text"> Contact : <a href="mailto:matchpredict@gmail.com">mailto:matchpredict@gmail.com</a> </p>
+        <p class="centered-text"> Contact : <a href="mailto:matchpredict@gmail.com">mailto:matchpredict@gmail.com</a>
+        </p>
     </footer>
 
 
